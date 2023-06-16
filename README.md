@@ -61,5 +61,8 @@ After downloading all 17 files and unzipping them, I housed the files in a tempo
   * Format > Cells > Number (no decimals) > 1,2,3,4,5,6,7
   * Note: 1 = Sunday and 7 = Saturday
 
+### Microsoft Excel: further data manipulation and creating summaries
+
+
 
 
