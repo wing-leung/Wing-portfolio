@@ -2,7 +2,7 @@
 
 ## Introduction
 Welcome to the Cylistic bike-share analysis case study!
-As a junior data analyst of Cyclistic’s marketing analyst team, I analyse historical data of the company in order to identify trends in how their customers use bikes differently. The main tools I use are spreadsheets, SQL and Tableau.
+As a junior data analyst of Cyclistic’s marketing analyst team, I analyse historical data of the company in order to identify trends in how their customers use bikes differently. The main tools I use are Microsoft Excel and Tableau.
 
 ## Scenario
 Cyclistic is a fictional bike-share company in Chicago. There are two types of customers using the company’s services: casual riders, customers who purchase single-ride or full-day passes; members, those who purchase annual memberships.
@@ -40,3 +40,26 @@ It is structured data, organised in rows (records) and columns (fields). There a
 * end_lat               #Trip end latitude  
 * end_lat               #Trip end longitute   
 * member_casual         #Rider type - Member or Casual
+
+## Data cleaning and manipulation
+### Microsoft Excel: initial data cleaning and manipulation
+After downloading all 17 files and unzipping them, I housed the files in a temporary folder on my desktop. I also created two subfolders, .CSV files and .XLS files so I have copies of all the original data. Then, I launched Excel, opened each file, and chose to Save As an Excel Workbook file. For each .XLS file, I did the following:
+
+
+* Removed extra spaces using **TRIM** function
+  * Unified formats in **ride_id column** and **rideable_type column**
+
+* Created a column **ride_length**
+  * Calculated the length of each ride by subtracting the column **started_at** from the column **ended_at** (example: =D2-C2)
+  * Formatted as **custom**
+  * Format > Cells > Time > [H]:MM:SS, displaying the accumulated hours the users used since sometimes the bike was rented for more than one day
+  * Used the **FILTER and SORT** functions to have a quick screen of the results and discover some errors as some of the started dates and ended dates were typed in in the wrong order. This was correct by sorting the columns by Z to A order and switching the data in the right order
+ 
+* Created a column **day_of_week**
+  * Used **WEEKDAY** function to calculate the day of the week that each ride started (example: =WEEKDAY(“started_at”,1))
+  * Formatted as a **number** with no decimal
+  * Format > Cells > Number (no decimals) > 1,2,3,4,5,6,7
+  * Note: 1 = Sunday and 7 = Saturday
+
+
+
